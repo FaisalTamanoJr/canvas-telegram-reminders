@@ -1,0 +1,22 @@
+name = "canvas-notifs"
+main = "src/index.js"
+compatibility_date = "2025-11-01"
+
+# Check Canvas every 10 minutes.
+[triggers]
+crons = ["*/10 * * * *"]
+
+# Run `npx wrangler kv namespace create KV` and paste the id it prints here.
+[[kv_namespaces]]
+binding = "KV"
+id = "PASTE_YOUR_KV_NAMESPACE_ID_HERE"
+
+[vars]
+# Time zone used for due dates in messages. List: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+TIMEZONE = "Asia/Manila"
+
+# Secrets (set with `npx wrangler secret put NAME`, never put them in this file):
+#   TELEGRAM_BOT_TOKEN  - from @BotFather
+#   TELEGRAM_CHAT_ID    - your chat ID (the bot tells you on /start)
+#   CANVAS_ICS_URL      - your Canvas calendar feed link
+#   WEBHOOK_SECRET      - any random string, e.g. from `openssl rand -hex 32`

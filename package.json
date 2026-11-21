@@ -1,0 +1,15 @@
+{
+  "name": "canvas-telegram-reminders",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Telegram reminders for Canvas assignment deadlines, running free on Cloudflare Workers.",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "logs": "wrangler tail",
+    "test": "node --test test/"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}
